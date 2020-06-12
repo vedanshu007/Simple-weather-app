@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <title>
+        Weather info
+    </title>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/img/icon.png">
@@ -20,7 +23,7 @@
                     
 
 
-                    
+ 
                 </div>
                 <div class="col-xl-12 col-md-12 col-sm-12 " style="text-align: center;">
                     <br>
@@ -29,12 +32,12 @@
                         <div class="card-body" >
                             <form class="form-group">
                         <br>
-                        <h3 style="font-family: fantasy; color:white; font-size:2em">Search here to get weather info</h3>
+                        <h3 style="font-family: fantasy; color:white; font-size:1.5em">Search here to get weather info</h3>
                         <br>
                         <div>
                             <div class="input-group-prepend">
                                 <span><img src='/img/loc.png' style="width: 50px; height:50px" ></span>
-                                <input class="form-control" style="font-size:1.3em" type="text" placeholder="Location">
+                                <input class="form-control" style="font-size:1.2em" type="text" placeholder="Location">
 
                             </div>
                         </div>
@@ -43,7 +46,7 @@
                         
                         <br>
 
-                        <button class="btn btn-dark text-light" style="font-size: 1.3em;">Search</button>
+                        <button class="btn btn-dark text-light" style="font-size: 1.2em;">Search</button>
 
 
                     </form>
@@ -54,21 +57,16 @@
                     <p style="color: rgb(255, 255, 255);font-size: 1em;" id="message-4" ></p>
                     <p style="color: rgb(255, 255, 255); font-size: 1em;" id="message-5" ></p>
                     <p style="color: rgb(255, 255, 255);font-size: 1em;" id="message-6" ></p>
-
                         </div>
                     </div>
-
-
-                    
-
+                    <br><br><br>
                 </div>
-                
             </div>
-
-            {{>footer}}
-            <script src="/js/app.js"></script>
-
         </div>
+                    {{>footer}}
+
+        
 
     </body>
+    <script src="/js/app.js"></script>
 </html>
