@@ -7,6 +7,13 @@ const msgFour = document.querySelector('#message-4')
 const msgFive = document.querySelector('#message-5')
 const msgSix = document.querySelector('#message-6')
 
+const msgOne1 = document.querySelector('#message-11')
+const msgTwo2 = document.querySelector('#message-12')
+const msgThree3 = document.querySelector('#message-13')
+const msgFour4 = document.querySelector('#message-14')
+const msgFive5 = document.querySelector('#message-15')
+const msgSix6 = document.querySelector('#message-16')
+
 
 //button click event
 
@@ -50,17 +57,19 @@ function showPosition(position) {
                 lon: position.coords.longitude} 
                 console.log(x)
 
-    fetch('/weather2?lat=' + x.lat + '&lon=' + x.lon).then((response) =>{
+                address1 = x.lon+','+x.lat
+
+    fetch('/weather?address=' + address1).then((response) =>{
                     response.json().then((data) =>{
                         if(data.error){
                             msgOne.textContent = data.error
                         }
-                        msgOne.textContent = data.Temp
-                        msgTwo.textContent = data.Forecast
-                        msgThree.textContent = data.Humidity
-                        msgFour.textContent = data.Pressure
-                        msgFive.textContent = data.WindSpeed
-                        msgSix.textContent = data.TimeZone
+                        msgOne1.textContent = data.Temp
+                        msgTwo2.textContent = data.Forecast
+                        msgThree3.textContent = data.Humidity
+                        msgFour4.textContent = data.Pressure
+                        msgFive5.textContent = data.WindSpeed
+                        msgSix6.textContent = data.TimeZone
                     })
                 })
                 
