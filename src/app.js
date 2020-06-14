@@ -74,6 +74,38 @@ app.get('/weather', (req,res) =>{
     //     address: req.query.address})
 })
 
+
+app.get('/weather2' , (req,res) =>{
+
+    if(!req.query.lat){
+        return( res.send({
+            error: "No GPS"
+        }))
+    }
+    console.log(req.query.lat + ' ' + req.query.lon)
+
+forecast(req.query.lat, req.query.lon, (error,data ) =>{ 
+            if(error){
+                return res.send({error})
+            }
+
+
+            res.send(
+                {
+                    Temp: 'Right now in '+ "here" +" it's "+ data.temp.toFixed(2) + " degree celcius.",
+                    Humidity: 'Humidity: '+   data.humidity + ' %' ,
+                    Forecast: 'Forecast: '+ data.forecast  ,
+                    WindSpeed: 'Wind Speed: '+ data.windSpeed + ' Km/h' ,
+                    Pressure: 'Pressure: '+ data.pressure + ' mBar',
+                    TimeZone: 'Time-zone: '+ data.timeZone
+                    
+                }
+            )
+        })
+
+
+})
+
 app.get('*', (req, res) =>{
     res.send('error 404 page not found')
 })
