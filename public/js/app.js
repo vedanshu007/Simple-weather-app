@@ -42,7 +42,7 @@ weatherForm.addEventListener('submit', (e) =>{
 
 
 var x = document.getElementById("demo");
-function getLocation() {
+window.onload = function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
         
